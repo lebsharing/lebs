@@ -6,6 +6,7 @@ import 'package:lebs/modules/main/main/controllers/main_controller.dart';
 import 'package:lebs/modules/main/main/views/w/left_nav_widget.dart';
 import 'package:lebs/modules/main/main/views/w/main_right_widget.dart';
 import 'package:lebs/modules/main/main/views/w/nav_item.dart';
+import 'package:lebs/modules/main/main/views/w/top_conner_widget.dart';
 import 'package:lebs/routes/route_name.dart';
 import 'package:lebs/utils/screen_utils.dart';
 
@@ -35,11 +36,7 @@ class MainPage extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Container(
-                      width: ScreenUtils.w(200),
-                      height: ScreenUtils.w(200),
-                      color: Colors.red,
-                    ),
+                    const TopConnerWidget(),
                     Expanded(
                       child: ListView.builder(
                         shrinkWrap: true,

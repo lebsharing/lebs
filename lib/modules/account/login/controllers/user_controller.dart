@@ -9,6 +9,10 @@ class UserController extends GetxController {
 
   final _parentInfo = Rx<ParentInfoModel>(ParentInfoModel());
   final _childList = List<ChildInfoModel>.empty(growable: true).obs;
+
+  ///当前选中的孩子
+  final _curChild = ChildInfoModel().obs;
+
   bool _init = false;
   @override
   void onInit() {
@@ -33,6 +37,10 @@ class UserController extends GetxController {
     return _childList;
   }
 
+  ChildInfoModel get curChild {
+    return _curChild.value;
+  }
+
   bool isLogin() {
     return (_parentInfo.value.token?.isNotEmpty ?? false);
   }
@@ -51,12 +59,16 @@ class UserController extends GetxController {
     _init = true;
   }
 
+  //仅用于登录，获取本地缓存时更新数据。
   _updateUserInfo(UserInfoModel userInfo) {
     if (userInfo.parentInfo != null) {
       _parentInfo.value = userInfo.parentInfo!;
     }
     if (userInfo.childList != null) {
       _childList.value = userInfo.childList!;
+      if (userInfo.childList!.isNotEmpty) {
+        _curChild.value = userInfo.childList!.first;
+      }
     }
   }
 }

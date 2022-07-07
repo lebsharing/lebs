@@ -46,7 +46,7 @@ class NavItemWidget extends StatelessWidget {
             Text(
               name,
               style: TextStyle(
-                color: Color(LeColor.cff7580E5),
+                color: Color(selected ? LeColor.cff7580E5 : LeColor.cff333333),
                 fontSize: ScreenUtils.f(28),
               ),
             )

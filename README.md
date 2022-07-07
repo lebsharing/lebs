@@ -19,6 +19,9 @@ samples, guidance on mobile development, and a full API reference.
 1、、关于Get的使用示例可以参考SplashPage
 2、GetX使用参考文章
 
+3、注意事项
+当Controller 与ListView、IndexedStack使用的时候，尽量使用GetBuilder.
+
 二、项目规则约束
 1、项目目录
 lib/widget 存放公共的widget
