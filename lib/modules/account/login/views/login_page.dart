@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lebs/intl/tran_intl.dart';
+import 'package:lebs/modules/account/login/controllers/user_controller.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -14,7 +15,12 @@ class LoginPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            OutlinedButton(onPressed: () {}, child: Text(Intl.login.tr))
+            OutlinedButton(
+              onPressed: () {
+                UserController.to.loginAndNext();
+              },
+              child: Text(Intl.login.tr),
+            )
           ],
         ),
       ),

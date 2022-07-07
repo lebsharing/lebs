@@ -45,12 +45,18 @@ class UserRepository {
       p = ParentInfoModel.fromJson(parentJson);
     }
     if (childList.isNotEmpty) {
-      List<Map<String, dynamic>> childListJson = json.decode(childList);
+      List childListJson = json.decode(childList);
       for (var c in childListJson) {
-        var ci = ChildInfoModel.fromJson(c);
-        cList.add(ci);
+        if (c is Map<String, dynamic>) {
+          var ci = ChildInfoModel.fromJson(c);
+          cList.add(ci);
+        } else {
+          print("child info data format is error.$c");
+        }
       }
     }
+    print("child length:${cList.length}");
+
     return UserInfoModel(p, cList);
   }
 }

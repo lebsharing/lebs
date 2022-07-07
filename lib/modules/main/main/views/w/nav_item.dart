@@ -9,7 +9,8 @@ class NavItemWidget extends StatelessWidget {
   final String name;
   final bool selected;
   final EdgeInsets? margin;
-  final VoidCallback? callback;
+  final int index;
+  final Function(int index)? callback;
 
   const NavItemWidget({
     Key? key,
@@ -18,6 +19,7 @@ class NavItemWidget extends StatelessWidget {
     required this.name,
     this.selected = false,
     this.margin,
+    required this.index,
     this.callback,
   }) : super(key: key);
 
@@ -28,7 +30,7 @@ class NavItemWidget extends StatelessWidget {
       child: SafeGestureDetector(
         onTap: () {
           if (callback != null) {
-            callback!();
+            callback!(index);
           }
         },
         child: Column(

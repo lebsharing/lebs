@@ -40,7 +40,8 @@ class LeftNavWidget extends StatelessWidget {
                       bottom: ScreenUtils.r(
                           index == MainConfig.tabList.length - 1 ? 60 : 30),
                     ),
-                    callback: () {
+                    index: index,
+                    callback: (position) {
                       MainController.to.changeTab(index);
                     },
                   ),
