@@ -41,6 +41,9 @@ dependencies:
   hive_flutter: ^1.1.0
   #
   sprintf: ^6.0.0
+  bot_toast: ^4.0.2
+  #随机生成英文文本
+  english_words: ^4.0.0
 
 dev_dependencies:
   flutter_test:

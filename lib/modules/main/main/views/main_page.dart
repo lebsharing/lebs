@@ -48,7 +48,7 @@ class MainPage extends StatelessWidget {
                           return NavItemWidget(
                             icon: _config.icon,
                             selectedIcon: _config.selectIcon,
-                            name: _config.name,
+                            name: _config.name.tr,
                             selected: index == controller.selectIndex,
                             margin: EdgeInsets.only(
                               top: ScreenUtils.r(30),

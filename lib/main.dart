@@ -4,8 +4,10 @@ import 'package:get/get.dart';
 import 'package:lebs/intl/Message.dart';
 import 'package:lebs/routes/route_name.dart';
 import 'package:lebs/routes/route_page.dart';
+import 'package:lebs/utils/sp_utils.dart';
 
-void main() {
+void main() async {
+  await SpUtils.instance.spInit();
   runApp(const MyApp());
 }
 

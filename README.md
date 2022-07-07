@@ -23,3 +23,5 @@ samples, guidance on mobile development, and a full API reference.
 1、项目目录
 lib/widget 存放公共的widget
 lib/modules ui
+
+2、弹窗及toast可以使用bot_toast

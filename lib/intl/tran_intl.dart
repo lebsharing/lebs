@@ -4,4 +4,5 @@ class Intl {
   static const String history = "History";
   static const String discovery = "Discovery";
   static const String me = "Me";
+  static const String login = "Login";
 }

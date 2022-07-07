@@ -21,7 +21,7 @@ class SpUtils {
 
   static SpUtils get instance => _getInstance();
 
-  void spInit() async {
+  Future<void> spInit() async {
     await Hive.initFlutter(_subDir);
     // await Hive.openLazyBox(name)
     _box = await Hive.openBox(_fileName);

@@ -10,6 +10,7 @@ class Messages extends Translations {
           Intl.history: "历史课程",
           Intl.discovery: "发现",
           Intl.me: "我的",
+          Intl.login: "登录",
         },
         'en': {
           Intl.home: "Home",
@@ -17,6 +18,7 @@ class Messages extends Translations {
           Intl.history: "History",
           Intl.discovery: "Discovery",
           Intl.me: "Me",
+          Intl.login: "Login",
         }
       };
 }
