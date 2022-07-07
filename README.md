@@ -15,7 +15,9 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-1、关于Get的使用示例可以参考SplashPage
+一、GetX
+1、、关于Get的使用示例可以参考SplashPage
+2、GetX使用参考文章
 
 二、项目规则约束
 1、项目目录
