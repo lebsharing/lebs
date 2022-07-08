@@ -44,6 +44,7 @@ dependencies:
   bot_toast: ^4.0.2
   #随机生成英文文本
   english_words: ^4.0.0
+  event_bus: ^2.0.0
 
 dev_dependencies:
   flutter_test:

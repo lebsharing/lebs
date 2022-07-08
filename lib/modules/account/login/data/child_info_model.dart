@@ -1,4 +1,5 @@
 class ChildInfoModel {
+  ///id为null,用来表示添加学生
   int? childId;
   String? name;
   String? avatar;

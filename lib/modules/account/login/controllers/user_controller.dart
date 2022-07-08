@@ -41,6 +41,11 @@ class UserController extends GetxController {
     return _curChild.value;
   }
 
+  ///设置当前选中的学生
+  updateCurChild(ChildInfoModel childInfo) {
+    _curChild.value = childInfo;
+  }
+
   bool isLogin() {
     return (_parentInfo.value.token?.isNotEmpty ?? false);
   }
@@ -51,6 +56,11 @@ class UserController extends GetxController {
     //跳转到下一页(关闭登录页面)
     Get.back();
     return true;
+  }
+
+  Future<void> addChild(ChildInfoModel childInfo) async {
+    _childList.add(childInfo);
+    userRepository.addChildInfo(_childList);
   }
 
   _initUserInfo() {

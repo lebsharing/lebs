@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:lebs/constants/le_color.dart';
 import 'package:lebs/modules/account/login/controllers/user_controller.dart';
 import 'package:lebs/modules/main/main/controllers/main_controller.dart';
+import 'package:lebs/modules/main/main/views/w/left_drawer_widget.dart';
 import 'package:lebs/modules/main/main/views/w/left_nav_widget.dart';
 import 'package:lebs/modules/main/main/views/w/main_right_widget.dart';
 import 'package:lebs/modules/main/main/views/w/nav_item.dart';
@@ -28,6 +29,7 @@ class MainPage extends StatelessWidget {
       },
       child: GetBuilder<MainController>(builder: (controller) {
         return Scaffold(
+          drawer: const LeftDrawerWidget(),
           body: Row(
             children: [
               Container(

@@ -11,6 +11,8 @@ class Messages extends Translations {
           Intl.discovery: "发现",
           Intl.me: "我的",
           Intl.login: "登录",
+          Intl.addStudent: "添加学生",
+          Intl.studentProfile: "学生信息"
         },
         'en': {
           Intl.home: "Home",
@@ -19,6 +21,8 @@ class Messages extends Translations {
           Intl.discovery: "Discovery",
           Intl.me: "Me",
           Intl.login: "Login",
+          Intl.addStudent: "Add Student",
+          Intl.studentProfile: "Student Profile"
         }
       };
 }

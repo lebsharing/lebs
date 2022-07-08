@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lebs/modules/account/login/controllers/user_controller.dart';
 import 'package:lebs/modules/main/main/views/w/nav_item.dart';
+import 'package:lebs/routes/route_name.dart';
 import 'package:lebs/utils/screen_utils.dart';
 
 class TopConnerWidget extends StatelessWidget {
@@ -26,9 +27,11 @@ class TopConnerWidget extends StatelessWidget {
               : "",
           index: 0,
           callback: (position) {
-            if (UserController.to.isLogin() &&
-                UserController.to.childList.isNotEmpty) {
-            } else {}
+            if (UserController.to.isLogin()) {
+              Scaffold.of(context).openDrawer();
+            } else {
+              Get.toNamed(RouteName.loginPage);
+            }
           },
         ),
       ),

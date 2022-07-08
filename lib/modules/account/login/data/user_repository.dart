@@ -59,4 +59,9 @@ class UserRepository {
 
     return UserInfoModel(p, cList);
   }
+
+  void addChildInfo(List<ChildInfoModel> childList) {
+    String childListStr = json.encode(childList);
+    SpUtils.instance.putString(SpConst.childList, childListStr);
+  }
 }
