@@ -21,6 +21,7 @@ class HomePage extends StatelessWidget {
                       ? "Alerady Login"
                       : " Not Login")),
             ),
+            Obx(() => Text(UserController.to.curChild.name ?? "")),
           ],
         ),
       ),

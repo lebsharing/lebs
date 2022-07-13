@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lebs/constants/action_event_type.dart';
 import 'package:lebs/constants/constants.dart';
 import 'package:lebs/constants/le_color.dart';
 import 'package:lebs/intl/tran_intl.dart';
 import 'package:lebs/modules/account/login/controllers/user_controller.dart';
 import 'package:lebs/modules/account/login/data/child_info_model.dart';
 import 'package:lebs/routes/route_name.dart';
+import 'package:lebs/utils/event_bus_utils.dart';
 import 'package:lebs/utils/screen_utils.dart';
 import 'package:lebs/widgets/safe_gesture_detector.dart';
 
@@ -26,10 +28,14 @@ class LeftDrawerWidget extends StatelessWidget {
                     childId: Constants.addChildAction,
                     name: Intl.addStudent.tr);
                 return _DrawerItemWidget(
-                    childInfo: addChildModel, index: index);
+                  childInfo: addChildModel,
+                  index: index,
+                );
               }
               return _DrawerItemWidget(
-                  childInfo: controller.childList[index], index: index);
+                childInfo: controller.childList[index],
+                index: index,
+              );
             },
           );
         },
@@ -124,5 +130,6 @@ class _DrawerItemWidget extends StatelessWidget {
       return;
     }
     UserController.to.updateCurChild(childInfo);
+    leEventBus.fire(CommentEvent(ActionEventType.changeAnotherChild));
   }
 }
