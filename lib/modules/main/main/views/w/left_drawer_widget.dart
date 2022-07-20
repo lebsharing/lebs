@@ -130,6 +130,6 @@ class _DrawerItemWidget extends StatelessWidget {
       return;
     }
     UserController.to.updateCurChild(childInfo);
-    leEventBus.fire(CommentEvent(ActionEventType.changeAnotherChild));
+    leEventBus.fire(CommonEvent(ActionEventType.changeAnotherChild));
   }
 }

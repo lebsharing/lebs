@@ -64,4 +64,10 @@ class UserRepository {
     String childListStr = json.encode(childList);
     SpUtils.instance.putString(SpConst.childList, childListStr);
   }
+
+  Future<bool> logout() async {
+    SpUtils.instance.delete(SpConst.parentInfo);
+    SpUtils.instance.delete(SpConst.childList);
+    return true;
+  }
 }

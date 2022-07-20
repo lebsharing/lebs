@@ -56,7 +56,7 @@ class HistoryController extends GetxController
   }
 
   _initListener() {
-    _busStreamSubscription = leEventBus.on<CommentEvent>().listen((event) {
+    _busStreamSubscription = leEventBus.on<CommonEvent>().listen((event) {
       if (event.eventType == ActionEventType.changeAnotherChild) {
         /// 切换学生，历史课程数据重新刷新
         _initTime();

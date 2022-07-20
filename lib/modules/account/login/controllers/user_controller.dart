@@ -63,22 +63,35 @@ class UserController extends GetxController {
     userRepository.addChildInfo(_childList);
   }
 
+  Future<bool> logout() async {
+    bool result = await userRepository.logout();
+    if (result == true) {
+      List<ChildInfoModel> list = List.empty(growable: true);
+      UserInfoModel model = UserInfoModel(ParentInfoModel(), list);
+      _updateUserInfo(model);
+      return true;
+    }
+    return false;
+  }
+
   _initUserInfo() {
     UserInfoModel user = userRepository.getCacheParentInfo();
     _updateUserInfo(user);
     _init = true;
   }
 
-  //仅用于登录，获取本地缓存时更新数据。
+  //用于登录，获取本地缓存时更新数据。
+  //退出登录时，更新本地数据
   _updateUserInfo(UserInfoModel userInfo) {
     if (userInfo.parentInfo != null) {
       _parentInfo.value = userInfo.parentInfo!;
     }
-    if (userInfo.childList != null) {
+    if (userInfo.childList?.isNotEmpty ?? false) {
       _childList.value = userInfo.childList!;
-      if (userInfo.childList!.isNotEmpty) {
-        _curChild.value = userInfo.childList!.first;
-      }
+      _curChild.value = userInfo.childList!.first;
+    } else {
+      _childList.clear();
+      _curChild.value = ChildInfoModel();
     }
   }
 }

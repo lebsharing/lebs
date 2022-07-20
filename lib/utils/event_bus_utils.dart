@@ -2,8 +2,8 @@ import 'package:event_bus/event_bus.dart';
 
 final EventBus leEventBus = EventBus();
 
-class CommentEvent {
+class CommonEvent {
   String eventType;
   dynamic data;
-  CommentEvent(this.eventType, {this.data});
+  CommonEvent(this.eventType, {this.data});
 }
