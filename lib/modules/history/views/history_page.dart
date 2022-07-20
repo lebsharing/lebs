@@ -4,8 +4,10 @@ import 'package:lebs/constants/le_color.dart';
 import 'package:lebs/intl/tran_intl.dart';
 import 'package:lebs/modules/history/controllers/history_controller.dart';
 import 'package:lebs/modules/history/views/course_list_page.dart';
+import 'package:lebs/utils/date_time_utils.dart';
 import 'package:lebs/utils/screen_utils.dart';
 import 'package:lebs/widgets/outline_btn.dart';
+import 'package:month_year_picker/month_year_picker.dart';
 
 ///历史课程
 class HistoryPage extends StatelessWidget {
@@ -42,8 +44,12 @@ class HistoryPage extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: ScreenUtils.w(40)),
                       margin: EdgeInsets.only(left: ScreenUtils.w(40)),
                       borderRadius: ScreenUtils.w(40),
-                      text: "近三个月",
-                      onClicked: () {},
+                      text: DateTimeUtils.historyDate(
+                          HistoryController.to.startSelectedTime,
+                          HistoryController.to.endSelectedTime),
+                      onClicked: () {
+                        showMonthPickerDialog(context);
+                      },
                     ),
                     Expanded(
                       child: TabBar(
@@ -83,7 +89,7 @@ class HistoryPage extends StatelessWidget {
                   children: [
                     CourseListPage(status: 0),
                     CourseListPage(
-                      status: 5,
+                      status: 4,
                     ),
                   ],
                 ),
@@ -92,6 +98,24 @@ class HistoryPage extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+
+  void showMonthPickerDialog(BuildContext context) async {
+    DateTime now = DateTime.now();
+    showMonthYearPicker(
+            context: context,
+            initialDate: HistoryController.to.endSelectedTime,
+            firstDate: DateTime(now.year - 10, 1),
+            lastDate: DateTime(now.year + 1, 12))
+        .then(
+      (date) {
+        if (date != null) {
+          DateTime s = DateTimeUtils.monthFirstDay(date);
+          DateTime e = DateTimeUtils.monthLastDay(date);
+          HistoryController.to.updateTime(s, e);
+        }
+      },
     );
   }
 }

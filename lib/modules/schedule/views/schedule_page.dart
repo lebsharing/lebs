@@ -11,6 +11,7 @@ class SchedulePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             const Text("Schedule"),
             Obx(

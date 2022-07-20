@@ -5,6 +5,7 @@ import 'package:lebs/constants/le_color.dart';
 import 'package:lebs/intl/tran_intl.dart';
 import 'package:lebs/models/history/history_course_model.dart';
 import 'package:lebs/modules/account/login/controllers/user_controller.dart';
+import 'package:lebs/routes/route_name.dart';
 import 'package:lebs/utils/date_time_utils.dart';
 import 'package:lebs/utils/screen_utils.dart';
 import 'package:lebs/widgets/outline_btn.dart';
@@ -183,7 +184,9 @@ class CourseItemWidget extends StatelessWidget {
                             margin: EdgeInsets.only(right: ScreenUtils.w(20)),
                             borderRadius: ScreenUtils.w(44),
                             fontSize: ScreenUtils.f(24),
-                            onClicked: () {},
+                            onClicked: () {
+                              _jumpClassSummary(context);
+                            },
                           ),
                         ),
                       ),
@@ -228,5 +231,12 @@ class CourseItemWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  _jumpClassSummary(BuildContext context) {
+    String url = "https://flutter.dev";
+    String url1 = "https://www.baidu.com/";
+    Get.toNamed(RouteName.browserPage,
+        arguments: {"url": url, "title": "Class Summary"});
   }
 }

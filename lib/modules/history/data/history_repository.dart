@@ -21,7 +21,7 @@ class HistoryRepository {
               classId: RandomUtils.generateId(),
               startTime: dt[0],
               endTime: dt[1],
-              status: status == 5 ? 5 : RandomUtils.randomInt(5),
+              status: status == 4 ? 4 : RandomUtils.randomInt(5),
               subjectType: RandomUtils.randomInt(6),
               courseType: i == length - 1 ? 0 : 1,
               classTypeId: RandomUtils.randomInt(2) + 1,

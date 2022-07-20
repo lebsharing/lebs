@@ -5,6 +5,7 @@ import 'package:lebs/intl/Message.dart';
 import 'package:lebs/routes/route_name.dart';
 import 'package:lebs/routes/route_page.dart';
 import 'package:lebs/utils/sp_utils.dart';
+import 'package:month_year_picker/month_year_picker.dart';
 
 void main() async {
   await SpUtils.instance.spInit();
@@ -26,6 +27,9 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
+          localizationsDelegates: [
+            MonthYearPickerLocalizations.delegate,
+          ],
           translations: Messages(),
           initialRoute: RouteName.root,
           getPages: RoutePage.routes,

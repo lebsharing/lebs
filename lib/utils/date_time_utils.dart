@@ -66,4 +66,37 @@ class DateTimeUtils {
     String month = monthFullName(startTime.month);
     return "$month ${startTime.day}  (${startTime.weekday}) ${startTime.hour}:${startTime.minute}-${endTime.hour}:${endTime.minute}";
   }
+
+  static DateTime monthFirstDay(DateTime dateTime) {
+    return DateTime(dateTime.year, dateTime.month, 1);
+  }
+
+  static DateTime monthLastDay(DateTime dateTime) {
+    return DateTime(dateTime.year, dateTime.month,
+        daysPerMonth(dateTime.year, dateTime.month));
+  }
+
+  static String historyDate(DateTime s, DateTime e) {
+    String tips = "近三个月";
+
+    if (e.month - s.month <= 0) {
+      return "${s.year} ${s.month}";
+    }
+    return tips;
+  }
+
+  /*
+   * 每个月的天数
+   */
+  static int daysPerMonth(int year, int month) => (month == 2)
+      ? (year % 4 == 0 ? 29 : 28)
+      : ((month == 1 ||
+              month == 3 ||
+              month == 5 ||
+              month == 7 ||
+              month == 8 ||
+              month == 10 ||
+              month == 12)
+          ? 31
+          : 30);
 }

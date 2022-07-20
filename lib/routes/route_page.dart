@@ -5,6 +5,7 @@ import 'package:lebs/modules/main/main/bind/main_bind.dart';
 import 'package:lebs/modules/main/main/views/main_page.dart';
 import 'package:lebs/modules/main/splash/bindings/splash_bind.dart';
 import 'package:lebs/modules/main/splash/presentation/views/splash_page.dart';
+import 'package:lebs/modules/web/browser_page.dart';
 import 'package:lebs/routes/route_name.dart';
 
 class RoutePage {
@@ -23,5 +24,6 @@ class RoutePage {
     ),
     GetPage(name: RouteName.loginPage, page: () => const LoginPage()),
     GetPage(name: RouteName.addChildPage, page: () => const AddChildPage()),
+    GetPage(name: RouteName.browserPage, page: () => const BrowserPage())
   ];
 }

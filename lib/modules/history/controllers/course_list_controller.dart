@@ -11,6 +11,9 @@ class CourseListController extends GetxController {
 
   CourseListController(this.status);
 
+  ///TODO 两个列表，使用同一类型的Controler,数据刷新
+  static CourseListController get to => Get.find<CourseListController>();
+
   @override
   void onReady() {
     super.onReady();
@@ -18,10 +21,11 @@ class CourseListController extends GetxController {
 
   loadData(DateTime startTime, DateTime endTime) async {
     dataStatus = DataStatus.loading;
+    courseList.clear();
     update();
     List<HistoryCourseModel> list =
         await HistoryRepository.getCourseList(startTime, endTime, status);
-    courseList.clear();
+    // courseList.clear();
     courseList.addAll(list);
     dataStatus = DataStatus.finish;
     update();

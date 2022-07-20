@@ -3,4 +3,5 @@ class RouteName {
   static const String mainPage = "/mainPage";
   static const String loginPage = "/loginPage";
   static const String addChildPage = "/addChildPage";
+  static const String browserPage = "/browserPage";
 }
