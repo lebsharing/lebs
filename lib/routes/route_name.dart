@@ -5,4 +5,5 @@ class RouteName {
   static const String addChildPage = "/addChildPage";
   static const String browserPage = "/browserPage";
   static const String itTestPage = "/itTestPage";
+  static const String homeworkPage = "/homeworkPage";
 }

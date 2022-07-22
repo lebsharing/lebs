@@ -50,6 +50,12 @@ dependencies:
   #
   month_year_picker: ^0.2.0+1
 
+  #homework
+#  pdf: ^3.8.1
+  flutter_pdfview: ^1.2.2
+  path: ^1.8.1
+  path_provider: ^2.0.11
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

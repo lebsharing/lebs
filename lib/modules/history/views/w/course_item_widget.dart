@@ -218,7 +218,9 @@ class CourseItemWidget extends StatelessWidget {
                         margin: EdgeInsets.only(right: ScreenUtils.w(20)),
                         borderRadius: ScreenUtils.w(44),
                         fontSize: ScreenUtils.f(24),
-                        onClicked: () {},
+                        onClicked: () {
+                          Get.toNamed(RouteName.homeworkPage);
+                        },
                       ),
                     ],
                   ),
