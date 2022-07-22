@@ -1,6 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:lebs/common/le_application.dart';
 import 'package:lebs/intl/Message.dart';
 import 'package:lebs/routes/route_name.dart';
 import 'package:lebs/routes/route_page.dart';
@@ -17,6 +20,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var local = window.locale;
+
     return ScreenUtilInit(
       designSize: const Size(2048, 1536),
       // minTextAdapt: true,
@@ -31,6 +36,7 @@ class MyApp extends StatelessWidget {
             MonthYearPickerLocalizations.delegate,
           ],
           translations: Messages(),
+          locale: LeApplication.getCurrentLocal(),
           initialRoute: RouteName.root,
           getPages: RoutePage.routes,
         );

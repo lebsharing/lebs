@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 enum ENV {
   ///生成环境
   release,
@@ -10,8 +12,17 @@ class LeApplication {
   static const ENV _initEnv = ENV.release;
   static ENV env = _initEnv;
 
-  static String language = "zh";
+  static String language = "en";
   static bool isZh() {
     return language.contains("zh");
+  }
+
+  static Locale getCurrentLocal() {
+    Locale l = window.locale;
+    if (l.languageCode?.toLowerCase() == "en" ||
+        l.languageCode?.toLowerCase() == "zh") {
+      return Locale(l.languageCode);
+    }
+    return Locale("en");
   }
 }
