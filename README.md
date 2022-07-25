@@ -1,8 +1,8 @@
 # lebs
 
-#该项目使用来示例GetX在项目中的使用以及规范
+# 该项目使用来示例GetX在项目中的使用以及规范
 
-#一、GetX
+# 一、GetX
 ##1、、关于Get的使用示例可以参考SplashPage
 ##2、GetX使用参考文章
 
@@ -17,7 +17,7 @@ b、反应式状态管理（GetX/Obx）
 ##5、可以结合EventBus,解决因事件的发生，导致数据需要改变的情况。
 可以用来处理程序中的事件流（controller中可以认为是数据流）
 
-#二、项目规则约束
+# 二、项目规则约束
 #1、项目目录
 lib/widget 存放公共的widget
 lib/modules ui
@@ -28,5 +28,5 @@ lib/modules/../view  界面或者widget
 
 
 
-#参考文章
-#1、https://cloud.tencent.com/developer/article/1846662
+# 参考文章
+# 1、https://cloud.tencent.com/developer/article/1846662
