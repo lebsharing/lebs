@@ -14,12 +14,11 @@ class SettingController extends GetxController {
   }
 
   void _initData() {
+    itemList.add(SetItemInfo(Intl.language, "", SetItemType.language));
+    itemList.add(SetItemInfo(Intl.recording, "OFF", SetItemType.recording));
+    itemList.add(SetItemInfo(Intl.version, "1.0.0", SetItemType.version));
+    itemList.add(SetItemInfo(Intl.conditions, "", SetItemType.conditions));
     itemList
-        .add(SetItemInfo(Intl.language.tr, "Chinese", SetItemType.language));
-    itemList.add(SetItemInfo(Intl.recording.tr, "OFF", SetItemType.recording));
-    itemList.add(SetItemInfo(Intl.version.tr, "1.0.0", SetItemType.version));
-    itemList.add(SetItemInfo(Intl.conditions.tr, "", SetItemType.conditions));
-    itemList
-        .add(SetItemInfo(Intl.deleteAccount.tr, "", SetItemType.deleteAccount));
+        .add(SetItemInfo(Intl.deleteAccount, "", SetItemType.deleteAccount));
   }
 }

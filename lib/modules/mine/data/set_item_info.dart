@@ -1,9 +1,9 @@
 enum SetItemType { language, recording, version, conditions, deleteAccount }
 
 class SetItemInfo {
-  String title;
+  String titleKey;
   String value;
   SetItemType type;
 
-  SetItemInfo(this.title, this.value, this.type);
+  SetItemInfo(this.titleKey, this.value, this.type);
 }

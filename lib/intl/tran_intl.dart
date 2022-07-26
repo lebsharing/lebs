@@ -1,3 +1,8 @@
+class LanguageSupport {
+  static const String zhCN = "zh";
+  static const String en = "en";
+}
+
 class Intl {
   static const String home = "Home";
   static const String schedule = "Schedule";
@@ -28,4 +33,6 @@ class Intl {
   static const String conditions = "conditions";
   static const String deleteAccount = "deleteAccount";
   static const String signOut = "signOut";
+  static const String chooseLanguage = "chooseLanguage";
+  static const String cancel = "cancel";
 }

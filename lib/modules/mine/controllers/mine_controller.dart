@@ -24,20 +24,20 @@ class MineController extends GetxController {
 
   _initSetTabData() {
     tabList.add(SettingTabInfo(
-        Intl.account.tr, Icons.account_box_outlined, SettingTabType.account));
+        Intl.account, Icons.account_box_outlined, SettingTabType.account));
     tabList.add(SettingTabInfo(
-        Intl.addClasses.tr, Icons.payment_outlined, SettingTabType.addClass));
+        Intl.addClasses, Icons.payment_outlined, SettingTabType.addClass));
     tabList.add(SettingTabInfo(
-        Intl.coupon.tr, Icons.card_giftcard_outlined, SettingTabType.coupon));
-    tabList.add(
-        SettingTabInfo(Intl.order.tr, Icons.reorder, SettingTabType.order));
+        Intl.coupon, Icons.card_giftcard_outlined, SettingTabType.coupon));
+    tabList
+        .add(SettingTabInfo(Intl.order, Icons.reorder, SettingTabType.order));
     tabList.add(SettingTabInfo(
-        Intl.faq.tr, Icons.question_answer_outlined, SettingTabType.faq));
+        Intl.faq, Icons.question_answer_outlined, SettingTabType.faq));
     tabList.add(SettingTabInfo(
-        Intl.feedback.tr, Icons.feedback_outlined, SettingTabType.feedback));
+        Intl.feedback, Icons.feedback_outlined, SettingTabType.feedback));
     tabList.add(SettingTabInfo(
-        Intl.setting.tr, Icons.settings_outlined, SettingTabType.setting));
+        Intl.setting, Icons.settings_outlined, SettingTabType.setting));
     tabList.add(SettingTabInfo(
-        Intl.itTest.tr, Icons.devices_other_outlined, SettingTabType.itTest));
+        Intl.itTest, Icons.devices_other_outlined, SettingTabType.itTest));
   }
 }

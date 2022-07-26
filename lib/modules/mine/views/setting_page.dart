@@ -5,6 +5,7 @@ import 'package:lebs/intl/tran_intl.dart';
 import 'package:lebs/modules/account/login/controllers/user_controller.dart';
 import 'package:lebs/modules/mine/controllers/setting_controller.dart';
 import 'package:lebs/modules/mine/data/set_item_info.dart';
+import 'package:lebs/modules/mine/views/w/select_language.dart';
 import 'package:lebs/modules/mine/views/w/set_item_widget.dart';
 import 'package:lebs/routes/route_name.dart';
 import 'package:lebs/utils/screen_utils.dart';
@@ -78,6 +79,9 @@ class SettingPage extends StatelessWidget {
 
   void _setItemClicked(SetItemInfo info) {
     if (info.type == SetItemType.language) {
+      Get.dialog(const Dialog(
+        child: SelectLanguageWidget(),
+      ));
     } else if (info.type == SetItemType.recording) {
     } else if (info.type == SetItemType.version) {
     } else if (info.type == SetItemType.conditions) {

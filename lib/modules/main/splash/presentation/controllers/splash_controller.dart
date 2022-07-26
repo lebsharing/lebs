@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:lebs/common/le_application.dart';
 import 'package:lebs/routes/route_name.dart';
 
 class SplashController extends GetxController {
@@ -6,6 +7,7 @@ class SplashController extends GetxController {
   void onInit() {
     super.onInit();
     print("----Splash onInit---");
+    LeApplication.initApp();
   }
 
   @override

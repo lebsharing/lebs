@@ -12,9 +12,9 @@ enum SettingTabType {
 }
 
 class SettingTabInfo {
-  String title;
+  String titleKey;
   IconData icon;
   SettingTabType type;
 
-  SettingTabInfo(this.title, this.icon, this.type);
+  SettingTabInfo(this.titleKey, this.icon, this.type);
 }

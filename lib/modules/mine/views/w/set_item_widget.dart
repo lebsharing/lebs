@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lebs/common/le_application.dart';
 import 'package:lebs/constants/le_color.dart';
 import 'package:lebs/modules/mine/data/set_item_info.dart';
 import 'package:lebs/utils/screen_utils.dart';
@@ -30,7 +32,7 @@ class SetItemWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    itemInfo.title,
+                    itemInfo.titleKey.tr,
                     style: TextStyle(
                       color: Color(LeColor.cff333333),
                       fontSize: ScreenUtils.f(32),
@@ -55,6 +57,16 @@ class SetItemWidget extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Visibility(
+                  visible: itemInfo.type == SetItemType.language,
+                  child: Text(
+                    LeApplication.isZh() ? "中文" : "English",
+                    style: TextStyle(
+                      color: Color(LeColor.cFF666666),
+                      fontSize: ScreenUtils.f(28),
+                    ),
+                  ),
+                ),
                 Text(
                   itemInfo.value,
                   style: TextStyle(

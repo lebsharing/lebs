@@ -30,27 +30,28 @@ class _LeftPOdfHomeworkWidgetState extends State<LeftPdfHomeworkWidget> {
     Completer<File> completer = Completer();
     try {
       String? url = widget.pdfUrl;
-      if (url?.isEmpty ?? true) {
+      if (url == null || url.isEmpty) {
         setState(() {
           _error = true;
         });
         return null;
-      }
-      final filename = url!.substring(url!.lastIndexOf("/") + 1);
-      var request = await HttpClient().getUrl(Uri.parse(url!));
-      var response = await request.close();
-      var bytes = await consolidateHttpClientResponseBytes(response);
-      var dir = await getApplicationDocumentsDirectory();
-      print("--fileName:${dir.path}/$filename");
-      File file = File("${dir.path}/$filename");
+      } else {
+        final filename = url.substring(url.lastIndexOf("/") + 1);
+        var request = await HttpClient().getUrl(Uri.parse(url));
+        var response = await request.close();
+        var bytes = await consolidateHttpClientResponseBytes(response);
+        var dir = await getApplicationDocumentsDirectory();
+        print("--fileName:${dir.path}/$filename");
+        File file = File("${dir.path}/$filename");
 
-      await file.writeAsBytes(bytes);
-      setState(() {
-        _error = false;
-        loadSuccess = true;
-        _filePath = file;
-      });
-      completer.complete(file);
+        await file.writeAsBytes(bytes);
+        setState(() {
+          _error = false;
+          loadSuccess = true;
+          _filePath = file;
+        });
+        completer.complete(file);
+      }
     } catch (e) {
       setState(() {
         _error = true;

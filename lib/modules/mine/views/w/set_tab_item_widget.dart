@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lebs/constants/le_color.dart';
 import 'package:lebs/modules/mine/controllers/mine_controller.dart';
 import 'package:lebs/modules/mine/data/setting_tab_info.dart';
@@ -41,17 +42,19 @@ class SetTabItemWidget extends StatelessWidget {
               size: ScreenUtils.w(90),
               color: Colors.blue[400],
             ),
-            Container(
-              margin: EdgeInsets.only(left: ScreenUtils.w(18)),
-              height: ScreenUtils.w(90),
-              alignment: Alignment.center,
-              child: Text(
-                tabInfo.title,
-                style: TextStyle(
-                  color: Color(LeColor.cff333333),
-                  fontSize: ScreenUtils.f(32),
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.only(left: ScreenUtils.w(18)),
+                height: ScreenUtils.w(90),
+                alignment: Alignment.center,
+                child: Text(
+                  tabInfo.titleKey.tr,
+                  style: TextStyle(
+                    color: Color(LeColor.cff333333),
+                    fontSize: ScreenUtils.f(32),
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
             )
           ],
